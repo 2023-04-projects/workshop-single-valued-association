@@ -4,12 +4,12 @@ name varchar(100),
 phone_number long,
 cust_id int,
 biryani_type int,
-FOREIGN KEY (cust_id) REFERENCES customerOrder(id),
+FOREIGN KEY (cust_id) REFERENCES customerorder(id),
 FOREIGN KEY (biryani_type) REFERENCES biryani(id)
 );
 
 
-create table customerOrder(
+create table customerorder(
 id int auto_increment primary key,
 name varchar(100),
 price double(30,2)

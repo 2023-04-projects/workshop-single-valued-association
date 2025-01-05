@@ -38,7 +38,7 @@ public class NewCustomerOrderDriver {
 		driver.newEntryForCustomerAndCustomerOrder(customer,customerOrder,biryani);
 	}
 
-	private void newEntryForCustomerAndCustomerOrder(Customer cust, CustomerOrder custOrder,Biryani biryani) {
-		repository.insertCustomerAndOrderAndBiryani(cust, custOrder,biryani);
+	private void newEntryForCustomerAndCustomerOrder(Customer cust, CustomerOrder customerOrder,Biryani biryani) {
+		repository.insertCustomerAndOrderAndBiryani(cust, customerOrder,biryani);
 	}
 }
