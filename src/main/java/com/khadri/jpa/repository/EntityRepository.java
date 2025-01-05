@@ -1,7 +1,11 @@
 package com.khadri.jpa.repository;
 
-import jakarta.persistence.EntityManagerFactory;
+import com.khadri.jpa.entity.FoodItems;
+import com.khadri.jpa.entity.ParkingSpace;
+import com.khadri.jpa.entity.Restaurant;
+
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 
 public class EntityRepository {
 
@@ -11,4 +15,12 @@ public class EntityRepository {
 		this.entityManager = factory.createEntityManager();
 	}
 
+	public void insertFoodItemsAndRestarent(FoodItems foodItems, Restaurant restaurant,ParkingSpace space) {
+		entityManager.getTransaction().begin();
+		entityManager.persist(foodItems);
+		entityManager.persist(restaurant);
+		foodItems.setRestaurant(restaurant);
+		entityManager.getTransaction().commit();
+
+	}
 }
