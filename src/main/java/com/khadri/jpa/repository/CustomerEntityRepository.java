@@ -3,18 +3,15 @@ package com.khadri.jpa.repository;
 import com.khadri.jpa.entity.Biryani;
 import com.khadri.jpa.entity.Customer;
 import com.khadri.jpa.entity.CustomerOrder;
-import com.khadri.jpa.entity.FoodItems;
-import com.khadri.jpa.entity.ParkingSpace;
-import com.khadri.jpa.entity.Restaurant;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
-public class EntityRepository {
+public class CustomerEntityRepository {
 
 	private EntityManager entityManager;
 
-	public EntityRepository(EntityManagerFactory factory) {
+	public CustomerEntityRepository(EntityManagerFactory factory) {
 		this.entityManager = factory.createEntityManager();
 	}
 	public void insertCustomerAndOrder(Customer customer, CustomerOrder customerOrder) {
@@ -58,12 +55,4 @@ public class EntityRepository {
 		entityManager.getTransaction().commit();
 	}
 
-	public void insertFoodItemsAndRestarent(FoodItems foodItems, Restaurant restaurant,ParkingSpace space) {
-		entityManager.getTransaction().begin();
-		entityManager.persist(foodItems);
-		entityManager.persist(restaurant);
-		foodItems.setRestaurant(restaurant);
-		entityManager.getTransaction().commit();
-
-	}
 }
