@@ -5,18 +5,18 @@ import java.time.LocalDate;
 import com.khadri.jpa.entity.Appointment;
 import com.khadri.jpa.entity.Doctor;
 import com.khadri.jpa.entity.Patient;
-import com.khadri.jpa.repository.EntityRepository;
+import com.khadri.jpa.repository.DoctorRepository;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class NewAppointPatientDoctorDriver {
 
-	private EntityRepository repository;
+	private DoctorRepository repository;
 
 	{
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT");
-		repository = new EntityRepository(factory);
+		repository = new DoctorRepository(factory);
 	}
 
 	public static void main(String[] args) {

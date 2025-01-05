@@ -7,11 +7,11 @@ import com.khadri.jpa.entity.Patient;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
-public class EntityRepository {
+public class DoctorRepository {
 
 	private EntityManager entityManager;
 
-	public EntityRepository(EntityManagerFactory factory) {
+	public DoctorRepository(EntityManagerFactory factory) {
 		this.entityManager = factory.createEntityManager();
 	}
 

@@ -3,8 +3,6 @@ package com.khadri.jpa.entity;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,20 +18,9 @@ public class Appointment {
 	private Integer appointId;
 	private LocalDate appointDate;
 
-	@Enumerated(EnumType.STRING)
-	private Location location;
-
 	@ManyToOne
 	@JoinColumn(name = "patientId")
 	private Patient patient;
-
-	public Location getLocation() {
-		return location;
-	}
-
-	public void setLocation(Location location) {
-		this.location = location;
-	}
 
 	public Patient getPatient() {
 		return patient;
@@ -61,8 +48,7 @@ public class Appointment {
 
 	@Override
 	public String toString() {
-		return "Appointment [appointId=" + appointId + ", appointDate=" + appointDate + ", location=" + location
-				+ ", patient=" + patient + "]";
+		return "Appointment [appointId=" + appointId + ", appointDate=" + appointDate + ", patient=" + patient + "]";
 	}
 
 }
