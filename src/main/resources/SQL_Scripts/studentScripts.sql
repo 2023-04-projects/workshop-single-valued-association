@@ -1,6 +1,5 @@
--- many to one
 create table college(
-type varchar(100) primary key,
+clgNo int auto_increment primary key,
 name varchar(100)
 );
 
@@ -8,8 +7,8 @@ create table student(
 id int auto_increment primary key,
 name varchar(100),
 fee double(30,2),
-clg_type varchar(100),
-FOREIGN KEY (clg_type) REFERENCES college(type)
+clgNo int,
+FOREIGN KEY (clgNo) REFERENCES college(clgNo)
 );
 
 -- one to one 
