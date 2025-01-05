@@ -3,10 +3,10 @@ id int auto_increment primary key,
 name varchar(100),
 phone_number long,
 cust_id int,
-biryani_type int,
 FOREIGN KEY (cust_id) REFERENCES customerorder(id),
-FOREIGN KEY (biryani_type) REFERENCES biryani(id)
 );
+ALTER TABLE customer ADD COLUMN biryani_id int;
+ALTER TABLE customer ADD CONSTRAINT  FOREIGN KEY (biryani_id) REFERENCES biryani(id);
 
 
 create table customerorder(
@@ -19,6 +19,6 @@ price double(30,2)
 
 create table biryani(
 id int auto_increment primary key,
-biryani_type int,
+biryani_type varchar(100),
 location varchar(4)
 );

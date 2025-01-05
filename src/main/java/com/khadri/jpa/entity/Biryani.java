@@ -16,7 +16,7 @@ public class Biryani {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int biryani_type;
+	private String biryani_type;
 	@Enumerated(EnumType.STRING)
 	private Location location;
 
@@ -31,11 +31,11 @@ public class Biryani {
 		this.id = id;
 	}
 
-	public int getBiryani_type() {
+	public String getBiryani_type() {
 		return biryani_type;
 	}
 
-	public void setBiryani_type(int biryani_type) {
+	public void setBiryani_type(String biryani_type) {
 		this.biryani_type = biryani_type;
 	}
 

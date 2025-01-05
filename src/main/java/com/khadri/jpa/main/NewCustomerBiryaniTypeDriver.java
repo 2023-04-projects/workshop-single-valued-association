@@ -2,18 +2,18 @@ package com.khadri.jpa.main;
 
 import com.khadri.jpa.entity.Customer;
 import com.khadri.jpa.entity.CustomerOrder;
-import com.khadri.jpa.repository.EntityRepository;
+import com.khadri.jpa.repository.CustomerEntityRepository;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 public class NewCustomerBiryaniTypeDriver {
 
-	private EntityRepository repository;
+	private CustomerEntityRepository repository;
 
 	{
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("PERSISTENCE_UNIT");
-		repository = new EntityRepository(factory);
+		repository = new CustomerEntityRepository(factory);
 	}
 
 	public static void main(String[] args) {
