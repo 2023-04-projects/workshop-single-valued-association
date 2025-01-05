@@ -1,5 +1,8 @@
 package com.khadri.jpa.entity;
 
 public enum Location {
-    PULIVENDULA,KADIRI,KADAPA;
+    PULIVENDULA,KADIRI,KADAPA,
+    
+	EAST, WEST, NORTH, SOUTH
+
 }
